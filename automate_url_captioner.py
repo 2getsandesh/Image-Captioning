@@ -40,8 +40,6 @@ with open("captions.txt", "w") as caption_file:
             response = requests.get(img_url)
             # Convert the image data to a PIL Image
             raw_image = Image.open(BytesIO(response.content))
-            if raw_image.size[0] * raw_image.size[1] < 400:  # Skip very small images
-                continue
 
             raw_image = raw_image.convert('RGB')
 
